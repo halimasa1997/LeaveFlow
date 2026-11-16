@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LeaveFlow - simple employee leave management in English and Arabic.">
+  <title>LeaveFlow</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Fonts, Bootstrap 5 and Bootstrap Icons (CDN). The Bootstrap link id is used by js/language.js to swap to the RTL build. -->
+  <link id="bootstrap-css" rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Loaded in <head> on purpose: sets language direction before the page is painted -->
+  <script src="js/language.js"></script>
+</head>
+<body data-page="home" data-title="page.home">
+
+  <div id="site-nav"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 fade-up">
+            <span class="hero-badge mb-3"><i class="bi bi-calendar2-check"></i><span data-i18n="hero.badge"></span></span>
+            <h1 class="display-4 fw-bold mb-3" data-i18n="hero.title"></h1>
+            <p class="lead mb-4" data-i18n="hero.subtitle"></p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="register.html" class="btn btn-accent btn-lg px-4" data-guest-only data-i18n="hero.cta.start"></a>
+              <a href="login.html" class="btn btn-outline-light btn-lg px-4" data-guest-only data-i18n="hero.cta.login"></a>
+              <a href="dashboard.html" class="btn btn-accent btn-lg px-4 d-none" data-auth-only data-i18n="hero.cta.dashboard"></a>
+            </div>
+          </div>
+
+          <!-- Decorative preview card (static sample data) -->
+          <div class="col-lg-5 offset-lg-1 fade-up delay-2">
+            <div class="hero-card" aria-hidden="true">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="icon-box icon-blue"><i class="bi bi-card-list"></i></span>
+                <strong class="fs-5" data-i18n="hero.card.title"></strong>
+              </div>
+              <div class="mock-row">
+                <div><strong class="ltr-text">LF-2026-0003</strong><br><small data-i18n="type.Emergency"></small></div>
+                <span class="badge-status badge-status-submitted" data-i18n="status.Submitted"></span>
+              </div>
+              <div class="mock-row">
+                <div><strong class="ltr-text">LF-2026-0002</strong><br><small data-i18n="type.Sick"></small></div>
+                <span class="badge-status badge-status-submitted" data-i18n="status.Submitted"></span>
+              </div>
+              <div class="mock-row">
+                <div><strong class="ltr-text">LF-2026-0001</strong><br><small data-i18n="type.Annual"></small></div>
+                <span class="badge-status badge-status-submitted" data-i18n="status.Submitted"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section bg-lf-gray">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title" data-i18n="features.title"></h2>
+          <p class="text-muted mb-0" data-i18n="features.subtitle"></p>
+        </div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3">
+            <div class="lf-card lf-card-hover p-4 h-100">
+              <span class="icon-box icon-blue mb-3"><i class="bi bi-lightning-charge"></i></span>
+              <h3 class="h5" data-i18n="f1.title"></h3>
+              <p class="text-muted mb-0" data-i18n="f1.text"></p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="lf-card lf-card-hover p-4 h-100">
+              <span class="icon-box icon-orange mb-3"><i class="bi bi-search"></i></span>
+              <h3 class="h5" data-i18n="f2.title"></h3>
+              <p class="text-muted mb-0" data-i18n="f2.text"></p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="lf-card lf-card-hover p-4 h-100">
+              <span class="icon-box icon-navy mb-3"><i class="bi bi-translate"></i></span>
+              <h3 class="h5" data-i18n="f3.title"></h3>
+              <p class="text-muted mb-0" data-i18n="f3.text"></p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="lf-card lf-card-hover p-4 h-100">
+              <span class="icon-box icon-blue mb-3"><i class="bi bi-feather"></i></span>
+              <h3 class="h5" data-i18n="f4.title"></h3>
+              <p class="text-muted mb-0" data-i18n="f4.text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-i18n="steps.title"></h2>
+        <div class="row g-4 text-center">
+          <div class="col-md-4">
+            <span class="step-number mb-3">1</span>
+            <h3 class="h5" data-i18n="s1.title"></h3>
+            <p class="text-muted" data-i18n="s1.text"></p>
+          </div>
+          <div class="col-md-4">
+            <span class="step-number mb-3">2</span>
+            <h3 class="h5" data-i18n="s2.title"></h3>
+            <p class="text-muted" data-i18n="s2.text"></p>
+          </div>
+          <div class="col-md-4">
+            <span class="step-number mb-3">3</span>
+            <h3 class="h5" data-i18n="s3.title"></h3>
+            <p class="text-muted" data-i18n="s3.text"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="pb-5">
+      <div class="container">
+        <div class="cta-band text-center">
+          <h2 class="mb-2" data-i18n="cta.title"></h2>
+          <p class="mb-4 opacity-75" data-i18n="cta.text"></p>
+          <a href="login.html" class="btn btn-accent btn-lg px-4" data-guest-only data-i18n="hero.cta.login"></a>
+          <a href="dashboard.html" class="btn btn-accent btn-lg px-4 d-none" data-auth-only data-i18n="hero.cta.dashboard"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

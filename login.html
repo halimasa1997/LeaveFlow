@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | LeaveFlow</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link id="bootstrap-css" rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/language.js"></script>
+</head>
+<body data-page="login" data-title="page.login">
+
+  <div id="site-nav"></div>
+
+  <main class="auth-wrap">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-10">
+          <div class="auth-card row g-0 fade-up">
+
+            <!-- Brand panel -->
+            <div class="col-lg-5 auth-side d-none d-lg-flex flex-column justify-content-center">
+              <img src="assets/logo.png" width="64" height="64" alt="LeaveFlow" class="mb-4">
+              <h2 class="h3 fw-bold mb-3" data-i18n="login.sideTitle"></h2>
+              <p class="mb-0 opacity-75" data-i18n="login.sideText"></p>
+            </div>
+
+            <!-- Form -->
+            <div class="col-lg-7 auth-form">
+              <h1 class="h3 fw-bold mb-1" data-i18n="login.title"></h1>
+              <p class="text-muted mb-4" data-i18n="login.subtitle"></p>
+
+              <form id="loginForm" novalidate>
+                <div class="alert alert-danger d-none" role="alert" data-form-alert></div>
+
+                <div class="mb-3">
+                  <label for="username" class="form-label" data-i18n="field.username"></label>
+                  <input type="text" class="form-control" id="username" name="username" autocomplete="username" data-i18n-placeholder="ph.username">
+                  <div class="invalid-feedback" data-error-for="username"></div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="password" class="form-label" data-i18n="field.password"></label>
+                  <div class="input-group">
+                    <input type="password" class="form-control" id="password" name="password" autocomplete="current-password">
+                    <button type="button" class="btn btn-outline-secondary" data-toggle-password="password" data-i18n-aria="common.showPassword"><i class="bi bi-eye"></i></button>
+                  </div>
+                  <div class="invalid-feedback" data-error-for="password"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg w-100" data-i18n="login.button"></button>
+              </form>
+
+              <p class="text-center mt-4 mb-4">
+                <span class="text-muted" data-i18n="login.noAccount"></span>
+                <a href="register.html" class="fw-semibold" data-i18n="login.registerLink"></a>
+              </p>
+
+              <!-- Demo account -->
+              <div class="demo-box mb-3">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                  <div>
+                    <strong data-i18n="login.demoTitle"></strong><br>
+                    <span class="text-muted"><span data-i18n="field.username"></span>: <code>demo</code></span> ·
+                    <span class="text-muted"><span data-i18n="field.password"></span>: <code>Demo@123</code></span>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-primary" id="useDemo" data-i18n="login.useDemo"></button>
+                </div>
+              </div>
+
+              <div class="demo-warning p-2 px-3">
+                <i class="bi bi-shield-exclamation me-1"></i><span data-i18n="demo.notice"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

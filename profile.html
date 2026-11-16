@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Employee Profile | LeaveFlow</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link id="bootstrap-css" rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/language.js"></script>
+</head>
+<body data-page="profile" data-title="page.profile">
+
+  <div id="site-nav"></div>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 data-i18n="profile.title"></h1>
+      <p class="text-muted mb-0 mt-1" data-i18n="profile.subtitle"></p>
+    </div>
+  </header>
+
+  <main class="page-body">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Summary card -->
+        <div class="col-lg-4">
+          <div class="lf-card p-4 text-center fade-up">
+            <span class="avatar mb-3" id="profileAvatar"></span>
+            <h2 class="h5 fw-bold mb-1" id="profileName"></h2>
+            <p class="text-muted mb-3"><span id="profileEmployeeId" class="ltr-text"></span></p>
+            <hr>
+            <div class="stat-value" id="profileRequestCount">0</div>
+            <div class="stat-label" data-i18n="profile.requestsCount"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <!-- Personal information -->
+          <form id="profileForm" class="lf-card p-4 p-md-5 mb-4 fade-up delay-1" novalidate>
+            <h2 class="h5 fw-bold mb-4"><i class="bi bi-person-lines-fill me-2 text-primary"></i><span data-i18n="profile.details"></span></h2>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="fullName" class="form-label" data-i18n="field.fullName"></label>
+                <input type="text" class="form-control" id="fullName" name="fullName" autocomplete="name">
+                <div class="invalid-feedback" data-error-for="fullName"></div>
+              </div>
+              <div class="col-md-6">
+                <label for="employeeId" class="form-label" data-i18n="field.employeeId"></label>
+                <input type="text" class="form-control" id="employeeId" name="employeeId" readonly>
+              </div>
+              <div class="col-md-6">
+                <label for="department" class="form-label" data-i18n="field.department"></label>
+                <select class="form-select" id="department" name="department">
+                  <option value="IT" data-i18n="dept.IT"></option>
+                  <option value="Business" data-i18n="dept.Business"></option>
+                  <option value="Engineering" data-i18n="dept.Engineering"></option>
+                </select>
+                <div class="invalid-feedback" data-error-for="department"></div>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label" data-i18n="field.email"></label>
+                <input type="email" class="form-control" id="email" name="email" autocomplete="email">
+                <div class="invalid-feedback" data-error-for="email"></div>
+              </div>
+              <div class="col-md-6">
+                <label for="username" class="form-label" data-i18n="field.username"></label>
+                <input type="text" class="form-control" id="username" name="username" readonly>
+              </div>
+            </div>
+            <p class="small text-muted mt-3 mb-0"><i class="bi bi-lock me-1"></i><span data-i18n="profile.readonlyHint"></span></p>
+            <button type="submit" class="btn btn-primary mt-4 px-4" data-i18n="profile.save"></button>
+          </form>
+
+          <!-- Change password -->
+          <form id="passwordForm" class="lf-card p-4 p-md-5 fade-up delay-2" novalidate>
+            <h2 class="h5 fw-bold mb-4"><i class="bi bi-key me-2 text-primary"></i><span data-i18n="profile.security"></span></h2>
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="currentPassword" class="form-label" data-i18n="profile.currentPassword"></label>
+                <input type="password" class="form-control" id="currentPassword" name="currentPassword" autocomplete="current-password">
+                <div class="invalid-feedback" data-error-for="currentPassword"></div>
+              </div>
+              <div class="col-md-6">
+                <label for="newPassword" class="form-label" data-i18n="profile.newPassword"></label>
+                <input type="password" class="form-control" id="newPassword" name="newPassword" autocomplete="new-password">
+                <div class="invalid-feedback" data-error-for="newPassword"></div>
+              </div>
+              <div class="col-md-6">
+                <label for="confirmPassword" class="form-label" data-i18n="profile.confirmPassword"></label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" autocomplete="new-password">
+                <div class="invalid-feedback" data-error-for="confirmPassword"></div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-outline-primary mt-4 px-4" data-i18n="profile.updatePassword"></button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

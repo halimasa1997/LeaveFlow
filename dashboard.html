@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | LeaveFlow</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link id="bootstrap-css" rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/language.js"></script>
+</head>
+<body data-page="dashboard" data-title="page.dashboard">
+
+  <div id="site-nav"></div>
+
+  <main class="page-body">
+    <div class="container">
+
+      <!-- Welcome banner -->
+      <section class="welcome-banner mb-4 fade-up">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+          <div>
+            <h1 class="h3 fw-bold mb-2" id="welcomeTitle"></h1>
+            <p class="mb-3 opacity-75" data-i18n="dash.subtitle"></p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="dept-pill"><i class="bi bi-building"></i><span id="deptName"></span></span>
+              <span class="dept-pill"><i class="bi bi-person-badge"></i><span id="employeeId" class="ltr-text"></span></span>
+            </div>
+          </div>
+          <a href="leave-request.html" class="btn btn-accent btn-lg">
+            <i class="bi bi-plus-circle me-2"></i><span data-i18n="dash.newButton"></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Statistics -->
+      <section class="row g-3 mb-4">
+        <div class="col-md-4 fade-up delay-1">
+          <div class="lf-card stat-card h-100">
+            <span class="icon-box icon-blue"><i class="bi bi-collection"></i></span>
+            <div>
+              <div class="stat-value" id="statTotal">0</div>
+              <div class="stat-label" data-i18n="dash.total"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up delay-2">
+          <div class="lf-card stat-card h-100">
+            <span class="icon-box icon-orange"><i class="bi bi-send-check"></i></span>
+            <div>
+              <div class="stat-value" id="statSubmitted">0</div>
+              <div class="stat-label" data-i18n="dash.submitted"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up delay-3">
+          <div class="lf-card stat-card h-100">
+            <span class="icon-box icon-navy"><i class="bi bi-clock-history"></i></span>
+            <div>
+              <div class="stat-value fs-4"><span id="statLast" class="ltr-text">—</span></div>
+              <div class="stat-label" data-i18n="dash.last"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent requests -->
+      <section class="lf-card fade-up delay-3">
+        <div class="d-flex justify-content-between align-items-center p-3 px-4 border-bottom">
+          <h2 class="h5 fw-bold mb-0" data-i18n="dash.recent"></h2>
+          <a href="my-requests.html" class="btn btn-sm btn-outline-primary">
+            <span data-i18n="dash.viewAll"></span>
+          </a>
+        </div>
+
+        <div class="table-responsive" id="recentTable">
+          <table class="table lf-table align-middle">
+            <thead>
+              <tr>
+                <th data-i18n="col.id"></th>
+                <th data-i18n="col.type"></th>
+                <th data-i18n="col.start"></th>
+                <th data-i18n="col.end"></th>
+                <th data-i18n="col.status"></th>
+              </tr>
+            </thead>
+            <tbody id="recentBody"></tbody>
+          </table>
+        </div>
+
+        <div class="empty-state d-none" id="recentEmpty">
+          <i class="bi bi-inbox d-block mb-2"></i>
+          <p class="mb-3" data-i18n="dash.empty"></p>
+          <a href="leave-request.html" class="btn btn-primary" data-i18n="dash.newButton"></a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

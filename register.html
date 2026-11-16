@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register | LeaveFlow</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link id="bootstrap-css" rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/language.js"></script>
+</head>
+<body data-page="register" data-title="page.register">
+
+  <div id="site-nav"></div>
+
+  <main class="auth-wrap">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-10">
+          <div class="auth-card row g-0 fade-up">
+
+            <!-- Brand panel -->
+            <div class="col-lg-4 auth-side d-none d-lg-flex flex-column justify-content-center">
+              <img src="assets/logo.png" width="64" height="64" alt="LeaveFlow" class="mb-4">
+              <h2 class="h3 fw-bold mb-3" data-i18n="register.sideTitle"></h2>
+              <p class="mb-0 opacity-75" data-i18n="register.sideText"></p>
+            </div>
+
+            <!-- Form -->
+            <div class="col-lg-8 auth-form">
+              <h1 class="h3 fw-bold mb-1" data-i18n="register.title"></h1>
+              <p class="text-muted mb-4" data-i18n="register.subtitle"></p>
+
+              <form id="registerForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="fullName" class="form-label" data-i18n="field.fullName"></label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" autocomplete="name" data-i18n-placeholder="ph.fullName">
+                    <div class="invalid-feedback" data-error-for="fullName"></div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="employeeId" class="form-label" data-i18n="field.employeeId"></label>
+                    <input type="text" class="form-control" id="employeeId" name="employeeId" autocomplete="off" data-i18n-placeholder="ph.employeeId">
+                    <div class="invalid-feedback" data-error-for="employeeId"></div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="department" class="form-label" data-i18n="field.department"></label>
+                    <select class="form-select" id="department" name="department">
+                      <option value="" data-i18n="field.selectDept"></option>
+                      <option value="IT" data-i18n="dept.IT"></option>
+                      <option value="Business" data-i18n="dept.Business"></option>
+                      <option value="Engineering" data-i18n="dept.Engineering"></option>
+                    </select>
+                    <div class="invalid-feedback" data-error-for="department"></div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="email" class="form-label" data-i18n="field.email"></label>
+                    <input type="email" class="form-control" id="email" name="email" autocomplete="email" data-i18n-placeholder="ph.email">
+                    <div class="invalid-feedback" data-error-for="email"></div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="username" class="form-label" data-i18n="field.username"></label>
+                    <input type="text" class="form-control" id="username" name="username" autocomplete="username" data-i18n-placeholder="ph.username">
+                    <div class="invalid-feedback" data-error-for="username"></div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="password" class="form-label" data-i18n="field.password"></label>
+                    <div class="input-group">
+                      <input type="password" class="form-control" id="password" name="password" autocomplete="new-password" data-i18n-placeholder="ph.password">
+                      <button type="button" class="btn btn-outline-secondary" data-toggle-password="password" data-i18n-aria="common.showPassword"><i class="bi bi-eye"></i></button>
+                    </div>
+                    <div class="invalid-feedback" data-error-for="password"></div>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg w-100 mt-4" data-i18n="register.button"></button>
+              </form>
+
+              <p class="text-center mt-4 mb-3">
+                <span class="text-muted" data-i18n="register.haveAccount"></span>
+                <a href="login.html" class="fw-semibold" data-i18n="register.loginLink"></a>
+              </p>
+
+              <div class="demo-warning p-2 px-3">
+                <i class="bi bi-shield-exclamation me-1"></i><span data-i18n="demo.notice"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

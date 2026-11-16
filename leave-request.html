@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Leave Request | LeaveFlow</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link id="bootstrap-css" rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/language.js"></script>
+</head>
+<body data-page="new-request" data-title="page.newRequest">
+
+  <div id="site-nav"></div>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 data-i18n="leave.title"></h1>
+      <p class="text-muted mb-0 mt-1" data-i18n="leave.subtitle"></p>
+    </div>
+  </header>
+
+  <main class="page-body">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+          <!-- Success panel (shown after a request is saved) -->
+          <div class="lf-card p-5 text-center d-none fade-up" id="successPanel">
+            <span class="icon-box icon-blue mb-3 mx-auto" style="width:72px;height:72px;font-size:2.2rem;"><i class="bi bi-check2-circle"></i></span>
+            <h2 class="h4 fw-bold" data-i18n="leave.successTitle"></h2>
+            <p class="text-muted mb-4" id="successText"></p>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+              <a href="my-requests.html" class="btn btn-primary" data-i18n="leave.viewRequests"></a>
+              <a href="dashboard.html" class="btn btn-outline-primary" data-i18n="leave.backDashboard"></a>
+              <button type="button" class="btn btn-outline-secondary" id="submitAnother" data-i18n="leave.another"></button>
+            </div>
+          </div>
+
+          <!-- Request form -->
+          <form id="leaveForm" class="lf-card p-4 p-md-5 fade-up" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="employeeName" class="form-label" data-i18n="field.employeeName"></label>
+                <input type="text" class="form-control" id="employeeName" name="employeeName" readonly>
+              </div>
+
+              <div class="col-md-6">
+                <label for="department" class="form-label" data-i18n="field.department"></label>
+                <input type="text" class="form-control" id="department" name="department" readonly>
+              </div>
+
+              <div class="col-12">
+                <label for="leaveType" class="form-label" data-i18n="field.leaveType"></label>
+                <select class="form-select" id="leaveType" name="leaveType">
+                  <option value="" data-i18n="leave.selectType"></option>
+                  <option value="Annual" data-i18n="type.Annual"></option>
+                  <option value="Sick" data-i18n="type.Sick"></option>
+                  <option value="Emergency" data-i18n="type.Emergency"></option>
+                  <option value="Other" data-i18n="type.Other"></option>
+                </select>
+                <div class="invalid-feedback" data-error-for="leaveType"></div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="startDate" class="form-label" data-i18n="field.startDate"></label>
+                <input type="date" class="form-control" id="startDate" name="startDate">
+                <div class="invalid-feedback" data-error-for="startDate"></div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="endDate" class="form-label" data-i18n="field.endDate"></label>
+                <input type="date" class="form-control" id="endDate" name="endDate">
+                <div class="invalid-feedback" data-error-for="endDate"></div>
+              </div>
+
+              <div class="col-12">
+                <div class="small fw-semibold text-primary d-none" id="durationText"><i class="bi bi-calendar-range me-1"></i></div>
+              </div>
+
+              <div class="col-12">
+                <label for="reason" class="form-label" data-i18n="field.reason"></label>
+                <textarea class="form-control" id="reason" name="reason" rows="4" maxlength="500" data-i18n-placeholder="ph.reason"></textarea>
+                <div class="invalid-feedback" data-error-for="reason"></div>
+              </div>
+            </div>
+
+            <p class="small text-muted mt-3 mb-0"><i class="bi bi-info-circle me-1"></i><span data-i18n="leave.note"></span></p>
+
+            <div class="d-flex flex-wrap gap-2 mt-4">
+              <button type="submit" class="btn btn-primary btn-lg px-4">
+                <i class="bi bi-send me-2"></i><span data-i18n="leave.submit"></span>
+              </button>
+              <a href="dashboard.html" class="btn btn-outline-secondary btn-lg px-4" data-i18n="leave.cancel"></a>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/leave.js"></script>
+</body>
+</html>

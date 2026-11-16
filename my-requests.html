@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Leave Requests | LeaveFlow</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link id="bootstrap-css" rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/language.js"></script>
+</head>
+<body data-page="my-requests" data-title="page.myRequests">
+
+  <div id="site-nav"></div>
+
+  <header class="page-header">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <div>
+        <h1 data-i18n="req.title"></h1>
+        <p class="text-muted mb-0 mt-1" data-i18n="req.subtitle"></p>
+      </div>
+      <a href="leave-request.html" class="btn btn-accent">
+        <i class="bi bi-plus-circle me-2"></i><span data-i18n="nav.newRequest"></span>
+      </a>
+    </div>
+  </header>
+
+  <main class="page-body">
+    <div class="container">
+      <section class="lf-card fade-up">
+
+        <!-- Search and filters -->
+        <div class="p-3 p-md-4 border-bottom">
+          <div class="row g-2 align-items-center">
+            <div class="col-lg-5">
+              <div class="input-group">
+                <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                <input type="search" class="form-control" id="searchInput" data-i18n-placeholder="ph.search" data-i18n-aria="ph.search">
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <select class="form-select" id="typeFilter" data-i18n-aria="field.leaveType">
+                <option value="" data-i18n="req.allTypes"></option>
+                <option value="Annual" data-i18n="type.Annual"></option>
+                <option value="Sick" data-i18n="type.Sick"></option>
+                <option value="Emergency" data-i18n="type.Emergency"></option>
+                <option value="Other" data-i18n="type.Other"></option>
+              </select>
+            </div>
+            <div class="col-sm-6 col-lg-2">
+              <select class="form-select" id="statusFilter" data-i18n-aria="col.status">
+                <option value="" data-i18n="req.allStatuses"></option>
+                <option value="Submitted" data-i18n="status.Submitted"></option>
+              </select>
+            </div>
+            <div class="col-lg-2">
+              <button type="button" class="btn btn-outline-secondary w-100" id="clearFilters">
+                <i class="bi bi-x-circle me-1"></i><span data-i18n="req.clear"></span>
+              </button>
+            </div>
+          </div>
+          <div class="small text-muted mt-3" id="resultCount" aria-live="polite"></div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive" id="tableWrap">
+          <table class="table lf-table align-middle">
+            <thead>
+              <tr>
+                <th data-i18n="col.id"></th>
+                <th data-i18n="col.type"></th>
+                <th data-i18n="col.start"></th>
+                <th data-i18n="col.end"></th>
+                <th data-i18n="col.reason"></th>
+                <th data-i18n="col.submitted"></th>
+                <th data-i18n="col.status"></th>
+              </tr>
+            </thead>
+            <tbody id="requestsBody"></tbody>
+          </table>
+        </div>
+
+        <!-- Empty state -->
+        <div class="empty-state d-none" id="emptyState">
+          <i class="bi bi-inbox d-block mb-2"></i>
+          <p class="fw-semibold mb-1" data-i18n="req.empty"></p>
+          <p class="small mb-0" data-i18n="req.emptyHint"></p>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/leave.js"></script>
+</body>
+</html>
